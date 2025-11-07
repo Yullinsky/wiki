@@ -1,0 +1,29 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Create a new page</h1><br>
+
+    <form method="post">
+        {% csrf_token %}
+        <div><h3>
+            <label for="entry"> Title: </label>
+            <input type="text" id="title" name="title"  placeholder="Example: CS50" required>
+        </h3></div>
+
+    <br>
+
+        <div>
+            <h3><label for="content"> Content (Markdown): </label></h3>
+            <textarea name="content" id="content" placeholder="CS50 is a programming course..." required cols="20" rows="5"></textarea>
+        </div>
+
+    <br>
+
+        <input type="submit" >
+    </form>
+
+{% endblock %}
